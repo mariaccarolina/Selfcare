@@ -1,46 +1,46 @@
 [
   {
-    "imagem": "",
+    "imagem": "img1.png",
     "nome": "Lorem ipsum dolor sit",
     "preco": 50.0
   },
   {
-    "imagem": "",
+    "imagem": "img2.png",
     "nome": "Curabitur aliquet quam",
     "preco": 45.0
   },
   {
-    "imagem": "",
+    "imagem": "img3.png",
     "nome": "Nulla quis lorem ut",
     "preco": 60.0
   },
   {
-    "imagem": "",
+    "imagem": "img4.png",
     "nome": "Vestibulum ante ipsum",
     "preco": 30.0
   },
   {
-    "imagem": "",
+    "imagem": "img5.png",
     "nome": "Praesent sapien massa",
     "preco": 55.0
   },
   {
-    "imagem": "",
+    "imagem": "img6.png",
     "nome": "Mauris blandit aliquet",
     "preco": 40.0
   },
   {
-    "imagem": "",
+    "imagem": "img7.png",
     "nome": "Aenean leo ligula",
     "preco": 65.0
   },
   {
-    "imagem": "",
+    "imagem": "img8.png",
     "nome": "Donec sollicitudin molestie",
     "preco": 70.0
   },
   {
-    "imagem": "",
+    "imagem": "img9.png",
     "nome": "Pellentesque in ipsum id",
     "preco": 35.0
   }
