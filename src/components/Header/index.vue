@@ -10,6 +10,7 @@
       <img src="../../assets/carrinho.svg" alt="Carrinho" />
     </figure>
   </header>
+  <div></div>
 </template>
 
 <style scoped lang="scss">
@@ -18,6 +19,13 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 10vh;
+}
+
+div{
+   background-image: url("/banner.png");
+   height: 50vh;
+   background-size: cover;
+  background-position:  100vw ;
 }
 
 img {
