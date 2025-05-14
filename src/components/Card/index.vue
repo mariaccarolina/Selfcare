@@ -10,7 +10,9 @@ defineProps({
   <div class="card">
     <img :src="imagem" :alt="nome" />
     <h2>{{ nome }}</h2>
-    <span>{{ preco }},00</span>
+    <p>
+      R$ <span> {{ preco }},00 </span>
+    </p>
   </div>
 </template>
 
@@ -21,6 +23,19 @@ defineProps({
   box-sizing: border-box;
   transition: transform 0.2s;
   cursor: pointer;
+
+  h2 {
+    margin: 10px 0 10px 0;
+  }
+
+  p {
+    font-weight: 600;
+  }
+
+  span {
+    color: #5ca720;
+    font-weight: 800;
+  }
 
   &:hover {
     transform: scale(1.02);
