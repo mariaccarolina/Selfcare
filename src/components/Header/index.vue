@@ -25,7 +25,11 @@ div{
    background-image: url("/banner.png");
    height: 50vh;
    background-size: cover;
-  background-position:  100vw ;
+   background-position: center ;
+     @media (max-width: 768px){
+       background-image: url("/banner1.png");
+       background-position: center;
+     }
 }
 
 img {

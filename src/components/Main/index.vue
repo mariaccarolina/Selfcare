@@ -1,5 +1,5 @@
 <script setup>
-import produtos from "../../data/produtos.json";
+//import produtos from "../../data/produtos.json";
 
 import Card from "../Card/index.vue";
 </script>
