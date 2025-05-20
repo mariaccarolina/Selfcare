@@ -2,7 +2,7 @@
 defineProps({
   nome: String,
   imagem: String,
-  preco: Number,
+  preco: [Number, String]
 });
 </script>
 
@@ -10,11 +10,11 @@ defineProps({
   <div class="card">
     <img :src="imagem" :alt="nome" />
     <h2>{{ nome }}</h2>
-    <p>
-      R$ <span> {{ preco }},00 </span>
-    </p>
+    <p>Preço: <span>R$ {{ preco }}</span></p>
   </div>
 </template>
+
+
 
 <style scoped lang="scss">
 .card {
@@ -33,9 +33,10 @@ defineProps({
   }
 
   span {
-    color: #5ca720;
-    font-weight: 800;
-  }
+  color: #5ca720;
+  font-weight: 800;
+}
+
 
   &:hover {
     transform: scale(1.02);
