@@ -14,6 +14,13 @@ onMounted(async () => {
     console.error("Erro ao buscar os produtos:", erro);
   }
 });
+
+async function captureId(id){
+  const resp = await axios.post(`https://simple-selfcare-api.onrender.com/carrinho/${id}`);
+  const dados = resp.data
+  console.log(dados)
+}
+
 </script>
 
 <template>
@@ -24,6 +31,8 @@ onMounted(async () => {
       :nome="produto.name"
       :imagem="produto.image"
       :preco="produto.price"
+      :id="produto.id"
+      @click="captureId(produto.id)"
     />
   </div>
 </template>

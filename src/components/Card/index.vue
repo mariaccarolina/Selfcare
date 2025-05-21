@@ -1,17 +1,22 @@
 <script setup>
-defineProps({
-  nome: String,
-  imagem: String,
-  preco: [Number, String]
-});
+const props = defineProps(['nome', 'imagem', 'preco']);
+//const emit = defineEmits(['add-to-cart']);//defineEmits(['nome-do-evento'])
+
+// function handleClick() {
+//   emit('add-to-cart', props.id); //emit('nome-do-evento', dados/paramentros)
+// }
 </script>
 
+
 <template>
-  <div class="card">
+  <section class="card">
     <img :src="imagem" :alt="nome" />
     <h2>{{ nome }}</h2>
-    <p>Preço: <span>R$ {{ preco }}</span></p>
-  </div>
+    <div>
+      <p>Preço: <span>R$ {{ preco }}</span></p>
+      <!-- <button  @click="handleClick">Adicionar ao Carrinho</button> -->
+    </div>
+  </section>
 </template>
 
 
@@ -30,6 +35,7 @@ defineProps({
 
   p {
     font-weight: 600;
+    font-size: 18px;
   }
 
   span {
@@ -45,5 +51,19 @@ defineProps({
 
 img {
   width: 100%;
+}
+
+button{
+  background-color: #5ca720;
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+}
+
+div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 </style>
