@@ -24,7 +24,11 @@ function abrirModal(produto) {
   modalAberto.value = true;
   console.log("batata");
   console.log(produto)
+}
 
+function fecharModal() {
+  modalAberto.value = false;
+  produtoSelecionado.value = null
 }
 async function captureId(id){
   const resp = await axios.post(`https://simple-selfcare-api.onrender.com/carrinho/${id}`);
@@ -37,7 +41,9 @@ async function captureId(id){
 <template>
 
   <div class="container">
-    <Modal v-if="modalAberto" :produto="produtoSelecionado"/>
+    <Modal v-if="modalAberto" 
+    :produto="produtoSelecionado"
+    @click="fecharModal"/>
     <Card
       v-for="(produto, index) in produtos"
       :key="index"
