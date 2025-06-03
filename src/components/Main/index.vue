@@ -2,8 +2,12 @@
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
 import Card from "../Card/index.vue";
+import Modal from "../Modal/index.vue"
 
 const produtos = ref([]);
+
+const modalAberto = ref(false);
+const produtoSelecionado = ref(null);
 
 onMounted(async () => {
   try {
@@ -15,6 +19,13 @@ onMounted(async () => {
   }
 });
 
+function abrirModal(produto) {
+  produtoSelecionado.value = produto;
+  modalAberto.value = true;
+  console.log("batata");
+  console.log(produto)
+
+}
 async function captureId(id){
   const resp = await axios.post(`https://simple-selfcare-api.onrender.com/carrinho/${id}`);
   const dados = resp.data
@@ -24,7 +35,9 @@ async function captureId(id){
 </script>
 
 <template>
+
   <div class="container">
+    <Modal v-if="modalAberto" :produto="produtoSelecionado"/>
     <Card
       v-for="(produto, index) in produtos"
       :key="index"
@@ -32,9 +45,10 @@ async function captureId(id){
       :imagem="produto.image"
       :preco="produto.price"
       :id="produto.id"
-      @click="captureId(produto.id)"
+      @click="abrirModal(produto)"
     />
   </div>
+ 
 </template>
 
 <style scoped lang="scss">
