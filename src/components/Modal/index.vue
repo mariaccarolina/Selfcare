@@ -81,8 +81,9 @@ defineProps(["produto"]);
 .avaliacao{
     border: solid 1px  #5ca720;
     border-radius: 10px;
-    padding: 0 2.5rem;
+    padding: 1rem 2.5rem;
     text-align: left;
+    padding: 10 0;
     ul{
         list-style: none;
     }
