@@ -4,7 +4,7 @@
       <button class="fechar" @click="emit('fechar')">x</button>
       <h2>{{ produto.name }}</h2>
       <img :src="produto.image" :alt="produto.name" />
-      <h4>R$:{{ produto.price }}</h4>
+      <h3>R$:{{ produto.price }}</h3>
       <p>{{ produto.description }}</p>
       <div>
         <button class="btnComprar">Comprar</button>
@@ -82,6 +82,7 @@ defineProps(["produto"]);
     border: solid 1px  #5ca720;
     border-radius: 10px;
     padding: 1rem 2.5rem;
+    margin-top: 10px;
     text-align: left;
     padding: 10 0;
     ul{
