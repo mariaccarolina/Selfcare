@@ -1,19 +1,24 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-import axios from 'axios';
+import axios from "axios";
+import { ref, onMounted } from "vue";
 import Card from "../Card/index.vue";
-import Modal from "../Modal/index.vue"
+import Load from "../Load/index.vue";
+import Modal from "../Modal/index.vue";
 
 const produtos = ref([]);
 
+const load = ref(true);
 const modalAberto = ref(false);
 const produtoSelecionado = ref(null);
 
 onMounted(async () => {
   try {
-    const resposta = await axios.get("https://simple-selfcare-api.onrender.com/");
+    const resposta = await axios.get(
+      "https://simple-selfcare-api.onrender.com/"
+    );
     produtos.value = resposta.data;
-    console.log(resposta.data)
+    console.log(resposta.data);
+    load.value = false;
   } catch (erro) {
     console.error("Erro ao buscar os produtos:", erro);
   }
@@ -23,27 +28,30 @@ function abrirModal(produto) {
   produtoSelecionado.value = produto;
   modalAberto.value = true;
   console.log("batata");
-  console.log(produto)
+  console.log(produto);
 }
 
 function fecharModal() {
   modalAberto.value = false;
-  produtoSelecionado.value = null
+  produtoSelecionado.value = null;
 }
-async function captureId(id){
-  const resp = await axios.post(`https://simple-selfcare-api.onrender.com/carrinho/${id}`);
-  const dados = resp.data
-  console.log(dados)
+async function captureId(id) {
+  const resp = await axios.post(
+    `https://simple-selfcare-api.onrender.com/carrinho/${id}`
+  );
+  const dados = resp.data;
+  console.log(dados);
 }
-
 </script>
 
 <template>
-
   <div class="container">
-    <Modal v-if="modalAberto" 
-    :produto="produtoSelecionado"
-    @click="fecharModal"/>
+    <Modal
+      v-if="modalAberto"
+      :produto="produtoSelecionado"
+      @click="fecharModal"
+    />
+    <Load v-if="load" />
     <Card
       v-for="(produto, index) in produtos"
       :key="index"
@@ -54,7 +62,6 @@ async function captureId(id){
       @click="abrirModal(produto)"
     />
   </div>
- 
 </template>
 
 <style scoped lang="scss">
