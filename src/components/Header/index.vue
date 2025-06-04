@@ -7,7 +7,10 @@
     <figure>
       <img src="../../assets/lupa.svg" alt="Lupa" />
       <img src="../../assets/usuario.svg" alt="Usuario" />
-      <img src="../../assets/carrinho.svg" alt="Carrinho" />
+
+      <router-link to="/carrinho">
+        <img src="../../assets/carrinho.svg" alt="Carrinho" />
+      </router-link>
     </figure>
   </header>
   <div></div>
@@ -21,15 +24,15 @@ header {
   height: 10vh;
 }
 
-div{
-   background-image: url("/banner.png");
-   height: 50vh;
-   background-size: cover;
-   background-position: center ;
-     @media (max-width: 768px){
-       background-image: url("/banner1.png");
-       background-position: center;
-     }
+div {
+  background-image: url("/banner.png");
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  @media (max-width: 768px) {
+    background-image: url("/banner1.png");
+    background-position: center;
+  }
 }
 
 img {
