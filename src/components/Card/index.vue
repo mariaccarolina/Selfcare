@@ -1,10 +1,5 @@
 <script setup>
 const props = defineProps(['nome', 'imagem', 'preco']);
-//const emit = defineEmits(['add-to-cart']);//defineEmits(['nome-do-evento'])
-
-// function handleClick() {
-//   emit('add-to-cart', props.id); //emit('nome-do-evento', dados/paramentros)
-// }
 </script>
 
 
@@ -14,7 +9,6 @@ const props = defineProps(['nome', 'imagem', 'preco']);
     <h2>{{ nome }}</h2>
     <div>
       <p>Preço: <span>R$ {{ preco }}</span></p>
-      <!-- <button  @click="handleClick">Adicionar ao Carrinho</button> -->
     </div>
   </section>
 </template>

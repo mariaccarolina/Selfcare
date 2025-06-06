@@ -12,12 +12,18 @@
       </div>
       <h4>Avaliações:</h4>
       <div v-if="produto.reviews && produto.reviews.length" class="avaliacao">
-        <ul>
-          <li v-for="(review, index) in produto.reviews" :key="index">
-            {{ review }}
-          </li>
-        </ul>
-      </div>
+  <ul>
+    <li v-for="(review, index) in produto.reviews" :key="index" class="review-item">
+  <img 
+    :src="`https://randomuser.me/api/portraits/women/${(index * 7 + produto.name.length * 3) % 70}.jpg`" 
+    alt="Usuário" 
+    class="avatar"
+  />
+  {{ review }}
+</li>
+
+  </ul>
+</div>
     </div>
   </section>
 </template>
@@ -43,16 +49,16 @@ defineProps(["produto"]);
 
 .modal-container {
   background: white;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 1rem;
   width: 90%;
   max-width: 600px;
   position: relative;
   animation: fadeIn 0.3s ease-in-out;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
- text-align: center;
+  text-align: center;
   img {
-    margin: 20px;
+    margin: 5px;
   }
 }
 
@@ -105,4 +111,17 @@ button{
     width: 11vw;
     background-color: #064603;
 }
+.review-item {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #5ca720;
+}
+
 </style>
